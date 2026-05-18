@@ -1,0 +1,20 @@
+services:
+  webgame:
+    container_name: webgame
+    hostname: webgame
+#    depends_on:
+#      - typedb
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.ubuntu
+    working_dir: /var/app/current
+    env_file:
+      - ./.env
+    ports:
+      - "${WEBGAME_HOST_PORT}:${WEBGAME_CONTAINER_PORT}"
+      - "${WEBGAME_HOST_DEBUG_PORT}:${WEBGAME_CONTAINER_DEBUG_PORT}"
+    stdin_open: true
+    tty: true
+    volumes:
+      - "./:/var/app/current"
+    command: sh -c "bash /var/app/current/docker_init.sh"

@@ -1,0 +1,35 @@
+{
+  "name": "current",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezcg/webgame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ezcg/webgame/issues"
+  },
+  "homepage": "https://github.com/ezcg/webgame#readme",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "startdev": "NODE_ENV=dev tsx watch src/server.ts",
+    "lint": "tsc --noEmit && eslint \"**/*.ts\" --quiet --fix",
+    "format": "prettier --write \"**/*.{ts,js,json}\""
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.4",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.3"
+  }
+}
