@@ -1,10 +1,13 @@
 <html>
 <head>
 <title>Webpage</title>
-<!-- script tags will trigger a call to the server for .js file, but the server.js file only loads index.html, so any call for a .js file will result in a 404 error -->
+<!-- Tyring to load an embedded .js file via script tags (eg. &lt;script src='app.js'&gt; will trigger a call to the server for app.js file, but the server.js file only loads index.html, so any call for a .js file will result in a 404 error -->
 </head>
 <body>
-<p>asdf2</p>
-<p id="test">testasdfasdf</p>
+<p>Just fiddling around.</p>
+<p id="test"></p>
+<script>
+document.getElementById("test").innerHTML = 'Trying to load an embedded .js file via script tags (eg. &lt;script src=\'app.js\'&gt; will trigger a call to the server for the app.js file, but the server.js file only loads index.html, so any call for a .js file will result in a 404 error. Inline javascript in the index.html page works fine.';
+</script>
 </body>
 </html>
