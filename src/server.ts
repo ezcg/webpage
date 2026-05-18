@@ -1,13 +1,23 @@
+import * as fs from "node:fs";
+import * as path from "node:path";
 import * as http from "node:http";
-import { greet } from "./greet";
+
+const port = Number(process.env["WEBGAME_HOST_PORT"] ?? 3000);
+const indexPath = path.resolve("public", "index.html");
 
 http
-  .createServer((_req, res: http.ServerResponse) => {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.write(greet("webgamer"));
-    res.end();
-  })
-  .listen(process.env["WEBGAME_HOST_PORT"]);
+  .createServer((req, res) => {
+    if (req.url !== "/") {
+      res.statusCode = 404;
+      res.end("Not Found");
+      return;
+    }
 
-console.log("Server running at port " + process.env["WEBGAME_HOST_PORT"]);
-console.log("http://localhost:" + process.env["WEBGAME_HOST_PORT"] + "/")
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    fs.createReadStream(indexPath).pipe(res);
+  })
+  .listen(port);
+
+console.log("Server running at port " + port);
+console.log("http://localhost:" + port + "/");
