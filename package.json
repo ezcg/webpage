@@ -5,16 +5,16 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ezcg/webgame.git"
+    "url": "git+https://github.com/ezcg/webpage.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/ezcg/webgame/issues"
+    "url": "https://github.com/ezcg/webpage/issues"
   },
-  "homepage": "https://github.com/ezcg/webgame#readme",
+  "homepage": "https://github.com/ezcg/webpage#readme",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",

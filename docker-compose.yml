@@ -1,7 +1,7 @@
 services:
-  webgame:
-    container_name: webgame
-    hostname: webgame
+  webpage:
+    container_name: webpage
+    hostname: webpage
 #    depends_on:
 #      - typedb
     build:
@@ -11,8 +11,8 @@ services:
     env_file:
       - ./.env
     ports:
-      - "${WEBGAME_HOST_PORT}:${WEBGAME_CONTAINER_PORT}"
-      - "${WEBGAME_HOST_DEBUG_PORT}:${WEBGAME_CONTAINER_DEBUG_PORT}"
+      - "${WEBPAGE_HOST_PORT}:${WEBPAGE_CONTAINER_PORT}"
+      - "${WEBPAGE_HOST_DEBUG_PORT}:${WEBPAGE_CONTAINER_DEBUG_PORT}"
     stdin_open: true
     tty: true
     volumes:
